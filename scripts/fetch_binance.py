@@ -17,6 +17,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
+from urllib.parse import urlsplit, urlunsplit
 
 try:
     import ccxt  # type: ignore
@@ -34,6 +35,9 @@ DEFAULT_LIMIT = 100
 DATA_ROOT = Path(__file__).resolve().parents[1] / "data"
 
 FALLBACK_API_BASES = (
+    "https://fapi.binance.com",
+    "https://fapi1.binance.com",
+    "https://fapi2.binance.com",
     "https://api.binance.com",
     "https://api1.binance.com",
     "https://api2.binance.com",
@@ -225,25 +229,59 @@ def _candidate_api_bases(exchange: Any) -> List[str]:
     override = os.getenv("BINANCE_API_BASE")
     if override:
         return [override]
-    current: List[str] = []
-    api_url = getattr(exchange, "urls", {}).get("api") if hasattr(exchange, "urls") else None
-    if api_url:
-        current.append(api_url)
+
+    candidates: List[str] = []
+
+    def _append_from_url(value: Any) -> None:
+        if isinstance(value, str):
+            parsed = urlsplit(value)
+            if not parsed.scheme or not parsed.netloc:
+                return
+            base = urlunsplit((parsed.scheme, parsed.netloc, "", "", ""))
+            if base not in candidates:
+                candidates.append(base)
+        elif isinstance(value, dict):
+            for nested in value.values():
+                _append_from_url(nested)
+
+    urls = getattr(exchange, "urls", {}) if hasattr(exchange, "urls") else {}
+    if isinstance(urls, dict):
+        for key in ("fapi", "api", "sapi"):
+            if key in urls:
+                _append_from_url(urls[key])
+
     for base in FALLBACK_API_BASES:
-        if base not in current:
-            current.append(base)
-    return current
+        if base not in candidates:
+            candidates.append(base)
+
+    return candidates
 
 
 def _set_exchange_api(exchange: Any, base_url: str) -> None:
-    if not hasattr(exchange, "urls"):
+    if not hasattr(exchange, "urls") or not base_url:
         return
+
     urls = exchange.urls
-    urls["api"] = base_url
-    if "fapi" in urls:
-        urls["fapi"] = base_url
-    if "sapi" in urls:
-        urls["sapi"] = base_url
+
+    def _rewrite(value: Any) -> Any:
+        if isinstance(value, str):
+            if value.startswith("wss://") or value.startswith("ws://"):
+                return value
+            parsed_original = urlsplit(value)
+            parsed_base = urlsplit(base_url)
+            if not parsed_original.scheme or not parsed_original.netloc:
+                return value
+            scheme = parsed_base.scheme or parsed_original.scheme
+            netloc = parsed_base.netloc or parsed_original.netloc
+            rewritten = urlunsplit((scheme, netloc, parsed_original.path, parsed_original.query, parsed_original.fragment))
+            return rewritten
+        if isinstance(value, dict):
+            return {key: _rewrite(subvalue) for key, subvalue in value.items()}
+        return value
+
+    for key in ("api", "fapi", "sapi"):
+        if key in urls:
+            urls[key] = _rewrite(urls[key])
 
 
 def _is_geoblock_error(error: Exception) -> bool:

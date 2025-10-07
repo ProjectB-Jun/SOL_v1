@@ -64,9 +64,11 @@ consume data from the `data/` partition and must never write secrets or API keys
    The command fetches the latest 100 15m candles, computes indicators,
    writes price snapshots to `data/price_patterns/`, and prints the file paths.
    Use `--debug` to print fallback diagnostics when troubleshooting API access
-   (e.g., regional geoblocking). When Binance's default domain is blocked, set
-   `BINANCE_API_BASE=https://api-gcp.binance.com` (or another accessible mirror)
-   to force the script to use that host.
+   (e.g., regional geoblocking). The fetcher now rewrites both futures (`fapi`)
+   and REST (`api`/`sapi`) endpoints when rotating domains, so manual overrides
+   should point to a full host (e.g., `https://fapi1.binance.com`). When Binance's
+   default domain is blocked, set `BINANCE_API_BASE=https://api-gcp.binance.com`
+   (or another accessible mirror) to force the script to use that host.
 
 ## Automation (GitHub Actions)
 
