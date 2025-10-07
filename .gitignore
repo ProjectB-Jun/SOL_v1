@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Environments
+.env
+.env.local
+.env.*
+
+# Data and artifacts
+/analysis/*.ipynb_checkpoints/
+/data/**/*.tmp
+/data/**/*.log
+/data/**/*.lock
+/.coverage
+coverage/
+
+# Node / misc
+node_modules/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
