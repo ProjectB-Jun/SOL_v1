@@ -4,6 +4,8 @@
 - Add Binance domain failover and debug flag to tolerate regional API blocking.
 - Document debug usage and provide environment override guidance.
 - Fix failover base rewriting to support ccxt's nested URL maps and futures hosts.
+- Prevent futures endpoints from being rewritten to spot mirrors during failover,
+  avoiding `BadSymbol` errors when geoblocks require host rotation.
 
 ## [0.1.0] - 2025-02-15
 - Scaffold repository structure for SOL/USDT 15m data aggregation.

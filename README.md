@@ -62,13 +62,14 @@ consume data from the `data/` partition and must never write secrets or API keys
    python scripts/fetch_binance.py --write --out data
    ```
    The command fetches the latest 100 15m candles, computes indicators,
-   writes price snapshots to `data/price_patterns/`, and prints the file paths.
-   Use `--debug` to print fallback diagnostics when troubleshooting API access
-   (e.g., regional geoblocking). The fetcher now rewrites both futures (`fapi`)
-   and REST (`api`/`sapi`) endpoints when rotating domains, so manual overrides
-   should point to a full host (e.g., `https://fapi1.binance.com`). When Binance's
-   default domain is blocked, set `BINANCE_API_BASE=https://api-gcp.binance.com`
-   (or another accessible mirror) to force the script to use that host.
+  writes price snapshots to `data/price_patterns/`, and prints the file paths.
+  Use `--debug` to print fallback diagnostics when troubleshooting API access
+  (e.g., regional geoblocking). Domain failover preserves futures endpoints on
+  futures mirrors (`fapi*`) and spot endpoints on spot mirrors (`api*`), so set
+  `BINANCE_API_BASE` to the specific host family you need (e.g.,
+  `https://fapi1.binance.com` for futures). When Binance's default domain is
+  blocked, choose an accessible mirror from the same family to avoid hitting the
+  wrong service.
 
 ## Automation (GitHub Actions)
 

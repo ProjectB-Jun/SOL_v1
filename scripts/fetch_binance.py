@@ -262,19 +262,32 @@ def _set_exchange_api(exchange: Any, base_url: str) -> None:
         return
 
     urls = exchange.urls
+    parsed_base = urlsplit(base_url)
+
+    def _normalize_prefix(netloc: str) -> str:
+        prefix = netloc.split(".")[0]
+        return prefix.rstrip("0123456789")
+
+    base_prefix = _normalize_prefix(parsed_base.netloc) if parsed_base.netloc else ""
 
     def _rewrite(value: Any) -> Any:
         if isinstance(value, str):
             if value.startswith("wss://") or value.startswith("ws://"):
                 return value
             parsed_original = urlsplit(value)
-            parsed_base = urlsplit(base_url)
             if not parsed_original.scheme or not parsed_original.netloc:
                 return value
+
+            original_prefix = _normalize_prefix(parsed_original.netloc)
+            if base_prefix and original_prefix and original_prefix != base_prefix:
+                netloc = parsed_original.netloc
+            else:
+                netloc = parsed_base.netloc or parsed_original.netloc
+
             scheme = parsed_base.scheme or parsed_original.scheme
-            netloc = parsed_base.netloc or parsed_original.netloc
-            rewritten = urlunsplit((scheme, netloc, parsed_original.path, parsed_original.query, parsed_original.fragment))
-            return rewritten
+            return urlunsplit(
+                (scheme, netloc, parsed_original.path, parsed_original.query, parsed_original.fragment)
+            )
         if isinstance(value, dict):
             return {key: _rewrite(subvalue) for key, subvalue in value.items()}
         return value

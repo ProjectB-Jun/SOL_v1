@@ -1,8 +1,6 @@
 import math
 from datetime import datetime, timezone
 
-import pytest
-
 from scripts.fetch_binance import (
     OHLCVRecord,
     build_atr_payload,
