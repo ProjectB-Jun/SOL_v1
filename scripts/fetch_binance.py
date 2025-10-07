@@ -313,6 +313,40 @@ def _is_geoblock_error(error: Exception) -> bool:
     return status == 451
 
 
+def _is_retryable_error(error: Exception) -> bool:
+    if _is_geoblock_error(error):
+        return True
+
+    if ccxt is not None:
+        ccxt_retry_classes = []
+        for name in ("NetworkError", "DDoSProtection", "RequestTimeout"):
+            candidate = getattr(ccxt, name, None)
+            if isinstance(candidate, type):
+                ccxt_retry_classes.append(candidate)
+        if ccxt_retry_classes and isinstance(error, tuple(ccxt_retry_classes)):
+            return True
+
+        exchange_not_available = getattr(ccxt, "ExchangeNotAvailable", None)
+        if isinstance(exchange_not_available, type) and isinstance(error, exchange_not_available):
+            message = str(error).lower()
+            if any(token in message for token in ("timed out", "connection reset", "temporarily unavailable")):
+                return True
+
+    if requests is not None:
+        timeout_cls = getattr(requests, "Timeout", None)
+        if isinstance(timeout_cls, type) and isinstance(error, timeout_cls):
+            return True
+        exceptions_module = getattr(requests, "exceptions", None)
+        if exceptions_module is not None:
+            for name in ("Timeout", "ConnectionError"):  # pragma: no branch - tiny tuple
+                candidate = getattr(exceptions_module, name, None)
+                if isinstance(candidate, type) and isinstance(error, candidate):
+                    return True
+
+    message = str(error).lower()
+    return any(token in message for token in ("timed out", "timeout", "connection reset"))
+
+
 def fetch_ohlcv(
     exchange: Any,
     symbol: str = DEFAULT_SYMBOL,
@@ -330,11 +364,8 @@ def fetch_ohlcv(
             break
         except Exception as exc:  # noqa: BLE001 - propagate after fallbacks
             last_error = exc
-            if ccxt and isinstance(exc, getattr(ccxt, "ExchangeNotAvailable", tuple())) and _is_geoblock_error(exc):
-                _maybe_debug("geoblock detected, trying next domain", enabled=debug)
-                continue
-            if _is_geoblock_error(exc):
-                _maybe_debug("geoblock detected, trying next domain", enabled=debug)
+            if _is_retryable_error(exc):
+                _maybe_debug("retryable error detected, trying next domain", enabled=debug)
                 continue
             raise
     else:

@@ -1,6 +1,8 @@
 # Changelog
 
 ## [0.1.1] - 2025-02-16
+- Retry Binance domain fallbacks on generic network timeouts/resets so transient
+  `Read timed out` errors rotate to the next mirror before failing the job.
 - Add additional Binance futures/spot mirror domains (`binanceusdt`, `binanceusds`,
   `binancezh`) so geoblocked runners have more fallback hosts before failing.
 - Add Binance domain failover and debug flag to tolerate regional API blocking.

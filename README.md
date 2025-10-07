@@ -64,9 +64,9 @@ consume data from the `data/` partition and must never write secrets or API keys
    The command fetches the latest 100 15m candles, computes indicators,
   writes price snapshots to `data/price_patterns/`, and prints the file paths.
   Use `--debug` to print fallback diagnostics when troubleshooting API access
-  (e.g., regional geoblocking). Domain failover preserves futures endpoints on
-  futures mirrors (`fapi*`) and spot endpoints on spot mirrors (`api*`), so set
-  `BINANCE_API_BASE` to the specific host family you need (e.g.,
+  (e.g., regional geoblocking or transient timeouts). Domain failover preserves
+  futures endpoints on futures mirrors (`fapi*`) and spot endpoints on spot
+  mirrors (`api*`), so set `BINANCE_API_BASE` to the specific host family you need (e.g.,
   `https://fapi1.binance.com` for futures). When Binance's default domain is
   blocked, choose an accessible mirror from the same family (for example,
   `https://fapi.binancefuture.com`, `https://fapi.binance.me`,

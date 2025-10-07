@@ -35,6 +35,10 @@ class DummyGeoblockError(Exception):
     http_status_code = 451
 
 
+class DummyTimeoutError(Exception):
+    pass
+
+
 def test_candidate_api_bases_env_override(monkeypatch: pytest.MonkeyPatch) -> None:
     exchange = DummyExchange()
     monkeypatch.setenv("BINANCE_API_BASE", "https://custom.binance.com")
@@ -105,3 +109,30 @@ def test_set_exchange_api_respects_domain_prefix() -> None:
 
     assert exchange.urls["api"] == "https://api1.binance.com/api/v3"
     assert exchange.urls["fapi"] == "https://fapi.binance.com/fapi/v1"
+
+
+def test_fetch_ohlcv_network_timeout_fallback(monkeypatch: pytest.MonkeyPatch) -> None:
+    class TimeoutExchange(DummyExchange):
+        def fetch_ohlcv(self, symbol: str, timeframe: str, limit: int):  # noqa: D401 - stub
+            self.calls += 1
+            self.api_hosts.append(self.urls["api"])
+            self.fapi_hosts.append(self.urls["fapi"])
+            if self.calls == 1:
+                raise DummyTimeoutError("Read timed out")
+            return [
+                [1_700_000_000_000, 100.0, 105.0, 95.0, 102.0, 1200.0],
+            ]
+
+    exchange = TimeoutExchange()
+    monkeypatch.delenv("BINANCE_API_BASE", raising=False)
+    monkeypatch.setattr(
+        fetch_binance,
+        "ccxt",
+        types.SimpleNamespace(NetworkError=DummyTimeoutError, ExchangeNotAvailable=DummyGeoblockError),
+    )
+
+    candles = fetch_binance.fetch_ohlcv(exchange, debug=True)
+
+    assert exchange.calls == 2
+    assert candles[0].close == 102.0
+    assert len(set(exchange.api_hosts + exchange.fapi_hosts)) >= 2
