@@ -34,6 +34,9 @@ data pipelines.
 ### Scripts
 - `scripts/fetch_binance.py`: Fetches SOL/USDT OHLCV candles, computes indicators,
   and serialises all 10 data products using ccxt + pure Python indicator formulas.
+- `scripts/farc_m_colab_aggregator.py`: Single-file Colab pipeline that collects 1m
+  perp/spot klines, funding, OI, and order book snapshots, then writes five compact
+  (≤10 column) CSV exports plus a JSON status report aligned with the FAR-CM spec.
 - `scripts/__main__.py` (optional entry point): reserved for orchestration if we
   expand to multi-symbol coverage.
 
