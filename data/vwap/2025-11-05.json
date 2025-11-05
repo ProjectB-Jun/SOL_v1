@@ -1,0 +1,505 @@
+{
+  "timestamp": "2025-11-05T14:20:00+00:00",
+  "rows": [
+    {
+      "timestamp": "2025-11-04T13:30:00+00:00",
+      "vwap": 161.6,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-04T13:45:00+00:00",
+      "vwap": 161.53873317418805,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T14:00:00+00:00",
+      "vwap": 161.32860052084624,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T14:15:00+00:00",
+      "vwap": 161.04301146938838,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T14:30:00+00:00",
+      "vwap": 161.31058475179447,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-04T14:45:00+00:00",
+      "vwap": 162.11934269419265,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-04T15:00:00+00:00",
+      "vwap": 162.34567864473328,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-04T15:15:00+00:00",
+      "vwap": 162.55965944660542,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-04T15:30:00+00:00",
+      "vwap": 162.61878806596067,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-04T15:45:00+00:00",
+      "vwap": 162.55450407462456,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T16:00:00+00:00",
+      "vwap": 162.47886586455786,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T16:15:00+00:00",
+      "vwap": 162.32081965657935,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T16:30:00+00:00",
+      "vwap": 162.18252018052357,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T16:45:00+00:00",
+      "vwap": 161.85652253527562,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T17:00:00+00:00",
+      "vwap": 160.6126581169338,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T17:15:00+00:00",
+      "vwap": 159.9336969435672,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T17:30:00+00:00",
+      "vwap": 159.76078519209497,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T17:45:00+00:00",
+      "vwap": 159.64388820476276,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T18:00:00+00:00",
+      "vwap": 159.41688660843724,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T18:15:00+00:00",
+      "vwap": 159.15412040445298,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T18:30:00+00:00",
+      "vwap": 158.81268355889995,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T18:45:00+00:00",
+      "vwap": 158.66873524438978,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T19:00:00+00:00",
+      "vwap": 158.58606660167996,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T19:15:00+00:00",
+      "vwap": 158.53580189749962,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T19:30:00+00:00",
+      "vwap": 158.4791388886702,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T19:45:00+00:00",
+      "vwap": 158.41941219377196,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T20:00:00+00:00",
+      "vwap": 158.28236714129545,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T20:15:00+00:00",
+      "vwap": 157.40001741583694,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T20:30:00+00:00",
+      "vwap": 157.2184573867424,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T20:45:00+00:00",
+      "vwap": 157.08153914535626,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T21:00:00+00:00",
+      "vwap": 156.96533175263488,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T21:15:00+00:00",
+      "vwap": 156.78590636138986,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T21:30:00+00:00",
+      "vwap": 156.15959157268023,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T21:45:00+00:00",
+      "vwap": 155.88545005631528,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T22:00:00+00:00",
+      "vwap": 155.78822531467958,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T22:15:00+00:00",
+      "vwap": 155.75318296088375,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T22:30:00+00:00",
+      "vwap": 155.73282781308703,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T22:45:00+00:00",
+      "vwap": 155.7257505940452,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T23:00:00+00:00",
+      "vwap": 155.7181353315171,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T23:15:00+00:00",
+      "vwap": 155.70814010090322,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T23:30:00+00:00",
+      "vwap": 155.69888903272195,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-04T23:45:00+00:00",
+      "vwap": 155.6937384336392,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T00:00:00+00:00",
+      "vwap": 155.68671092369132,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T00:15:00+00:00",
+      "vwap": 155.67494542013316,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T00:30:00+00:00",
+      "vwap": 155.63967406881508,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T00:45:00+00:00",
+      "vwap": 155.61510292775216,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T01:00:00+00:00",
+      "vwap": 155.58025309632998,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T01:15:00+00:00",
+      "vwap": 155.44876418544612,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T01:30:00+00:00",
+      "vwap": 155.20818027692658,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T01:45:00+00:00",
+      "vwap": 155.094230580586,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T02:00:00+00:00",
+      "vwap": 155.0608970677982,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T02:15:00+00:00",
+      "vwap": 155.05205831418522,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T02:30:00+00:00",
+      "vwap": 155.05000574914928,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T02:45:00+00:00",
+      "vwap": 155.0561395427775,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T03:00:00+00:00",
+      "vwap": 155.06296287071476,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T03:15:00+00:00",
+      "vwap": 155.06807914469942,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T03:30:00+00:00",
+      "vwap": 155.0774544237012,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T03:45:00+00:00",
+      "vwap": 155.09928121688642,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T04:00:00+00:00",
+      "vwap": 155.11229477070572,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T04:15:00+00:00",
+      "vwap": 155.11890604349824,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T04:30:00+00:00",
+      "vwap": 155.12969273690675,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T04:45:00+00:00",
+      "vwap": 155.13932196190402,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T05:00:00+00:00",
+      "vwap": 155.16736619020904,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T05:15:00+00:00",
+      "vwap": 155.17860295797817,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T05:30:00+00:00",
+      "vwap": 155.18748693868253,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T05:45:00+00:00",
+      "vwap": 155.19636280675556,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T06:00:00+00:00",
+      "vwap": 155.20338543857451,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T06:15:00+00:00",
+      "vwap": 155.21323878152077,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T06:30:00+00:00",
+      "vwap": 155.22025523854578,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T06:45:00+00:00",
+      "vwap": 155.22788870160034,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T07:00:00+00:00",
+      "vwap": 155.23471837012318,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T07:15:00+00:00",
+      "vwap": 155.24027669127932,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T07:30:00+00:00",
+      "vwap": 155.24409470360746,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T07:45:00+00:00",
+      "vwap": 155.24916971008275,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T08:00:00+00:00",
+      "vwap": 155.2528608767276,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T08:15:00+00:00",
+      "vwap": 155.24296978804293,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T08:30:00+00:00",
+      "vwap": 155.2415586519347,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T08:45:00+00:00",
+      "vwap": 155.2414995937172,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T09:00:00+00:00",
+      "vwap": 155.24970259558012,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T09:15:00+00:00",
+      "vwap": 155.25430444297507,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T09:30:00+00:00",
+      "vwap": 155.2586780469176,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T09:45:00+00:00",
+      "vwap": 155.26368899266024,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T10:00:00+00:00",
+      "vwap": 155.26886331100496,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T10:15:00+00:00",
+      "vwap": 155.27114292314576,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T10:30:00+00:00",
+      "vwap": 155.2726040210345,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T10:45:00+00:00",
+      "vwap": 155.27141859773013,
+      "price_vs_vwap": "below"
+    },
+    {
+      "timestamp": "2025-11-05T11:00:00+00:00",
+      "vwap": 155.27262389928822,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T11:15:00+00:00",
+      "vwap": 155.27750858302434,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T11:30:00+00:00",
+      "vwap": 155.2820869272334,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T11:45:00+00:00",
+      "vwap": 155.2911539343217,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T12:00:00+00:00",
+      "vwap": 155.2997035177214,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T12:15:00+00:00",
+      "vwap": 155.32309832396723,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T12:30:00+00:00",
+      "vwap": 155.33713854275754,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T12:45:00+00:00",
+      "vwap": 155.34746437683964,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T13:00:00+00:00",
+      "vwap": 155.35856698269373,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T13:15:00+00:00",
+      "vwap": 155.37218121222006,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T13:30:00+00:00",
+      "vwap": 155.39536531979655,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T13:45:00+00:00",
+      "vwap": 155.44224278863288,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T14:00:00+00:00",
+      "vwap": 155.46357499910417,
+      "price_vs_vwap": "above"
+    },
+    {
+      "timestamp": "2025-11-05T14:15:00+00:00",
+      "vwap": 155.4716699489786,
+      "price_vs_vwap": "above"
+    }
+  ]
+}
